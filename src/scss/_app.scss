@@ -1,0 +1,131 @@
+
+:root {
+    --bg-dark: #000;
+    --bg-secondary: #313131;
+
+    --cl-yellow: #F76800;
+    --cl-dark-yellow: #d3520c;
+    --cl-section-border: #dcdcdc;
+
+    --header-index: 10;
+    --header-height: 95px;
+
+    --container-indent: 56px;
+
+    --h1-fs: 44px;
+    --h2-fs: 38px;
+    --h3-fs: 28px;
+
+    --h-index: 100;
+
+    @include mq-max(sm) {
+        --header-height: 50px;
+    }
+}
+
+h1,h2,h3 {
+    margin: 0;
+    text-transform: uppercase;
+    line-height: 1.5;
+
+    span {
+        font-weight: 300;
+    }
+}
+
+h2 {
+    font-size: var(--h1-fs);
+}
+
+h2 {
+    font-size: var(--h2-fs);
+}
+
+h3 {
+    font-family: 'Rokkitt', sans-serif;
+    font-weight: 300;
+    text-transform: none;
+    line-height: 1;
+    letter-spacing: 1.4px;
+    font-size: var(--h3-fs);
+}
+
+[href] {
+    color: currentColor;
+    text-decoration: none;
+}
+
+html, body {
+    font-weight: normal;
+    font-style: normal;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    color: #212121;
+}
+
+html.ovhidden ,
+html.ovhidden body {
+    height: 100vh;
+    height: -webkit-fill-available;
+    overflow: hidden!important;
+}
+
+
+.ovhidden {
+    overflow: hidden!important;
+}
+
+.ellipsis {
+    display: block;
+    overflow: hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.hidden {
+    display: none!important;
+}
+
+.pixel {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 1111;
+    opacity: 0.2;
+}
+
+
+.app-desktop-visible {
+    @include mq-max(sm) {
+        display: none!important;
+    }
+}
+
+.app-mobile-visible {
+    @include mq-min(sm) {
+        display: none!important;
+    }
+}
+
+.app-container {
+    padding-left: var(--container-indent);
+    padding-right: var(--container-indent);
+}
+
+.app-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    @include mq-max(sm) {
+        padding-top: var(--header-b-height);
+        padding-bottom: var(--footer-height);
+    }
+}
+
+
+.cl-yellow {
+    color: var(--cl-yellow)
+}

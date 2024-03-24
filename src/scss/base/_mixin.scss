@@ -1,0 +1,47 @@
+@import "src/scss/base/variables";
+
+@mixin mq($styles: ()) {
+
+    $styles: map-merge((
+        points: (),
+        device: screen,
+        split: false,
+    ), $styles);
+
+    $points: map_get($styles, points);
+    $device: map_get($styles, device);
+    $split: map_get($styles, split);
+
+    @if (type_of($points) == map) {
+        $keys: map_keys($points);
+        $values: map_values($points);
+
+        @if length($points) == 1 {
+            @media #{$device} and (#{nth($keys, 1)}: #{nth($values, 1)}) {
+                @content;
+            }
+        } @else {
+            @if ($split) {
+                @media #{$device} and (#{nth($keys, 1)}: #{nth($values, 1)}) and (#{nth($keys, 2)}: #{nth($values, 2)}) {
+                    @content;
+                }
+            } @else {
+                @media #{$device} and (#{nth($keys, 1)}: #{nth($values, 1)}), #{$device} and (#{nth($keys, 2)}: #{nth($values, 2)}) {
+                    @content;
+                }
+            }
+        }
+    }
+}
+
+@mixin mq-min($n) {
+    @include mq((points: (min-width: media-min($n)))){
+        @content;
+    }
+}
+
+@mixin mq-max($n) {
+    @include mq((points: (max-width: media-max($n)))){
+        @content;
+    }
+}

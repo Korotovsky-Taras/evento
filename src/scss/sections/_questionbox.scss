@@ -1,0 +1,27 @@
+.app-questionbox {
+    margin-bottom: 110px;
+    background-color: #FF6D00;
+    background-image: url('/bg-3.jpg') ;
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    background-size: cover;
+    color: white;
+
+    .app-content {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: 0.3px;
+
+        svg {
+            margin-right: 26px;
+        }
+    }
+}
+
+.app-questionbox-tel {
+    font-weight: 600;
+}

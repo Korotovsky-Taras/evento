@@ -1,0 +1,21 @@
+
+.app-brand-slider {
+    padding: 80px 0;
+
+    swiper-slide {
+        width: auto;
+        position: relative;
+
+        &:before {
+            content: "";
+            height: 60%;
+            width: 1px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 100%;
+            margin-right: 30px;
+            background-color: var(--cl-section-border);
+        }
+    }
+}
