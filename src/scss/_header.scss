@@ -1,0 +1,135 @@
+
+.app-header {
+    background-color: var(--bg-dark);
+    position: sticky;
+    z-index: var(--h-index);
+    top: 0;
+}
+
+.app-header__logo {
+    margin-right: 20px;
+}
+
+.app-header__nav {
+    --hn-sh-cl: #fff;
+
+    color: #fff;
+    margin-left: 26px;
+    padding-left: 26px;
+    box-shadow: -1px 0 0 var(--hn-sh-cl);
+    padding-top: 18px;
+    padding-bottom: 18px;
+
+    b {
+        font-size: 16px;
+        text-transform: uppercase;
+        margin-right: 18px;
+        margin-left: 18px;
+        letter-spacing: 1.5px;
+    }
+
+    [href] {
+        padding: 6px 12px 6px 12px;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+
+        svg {
+            margin-left: 4px;
+        }
+
+        &:hover {
+            transition: opacity 0.15s ease-out;
+            opacity: 0.8;
+        }
+    }
+
+    ~ .app-header__nav {
+        --hn-sh-cl: #666
+    }
+}
+
+.app-header__wrapper {
+    height: var(--header-height);
+    position: relative;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-header__left,
+.app-header__right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-header__left {
+    margin-right: auto;
+}
+
+.app-header__right {
+    margin-left: auto;
+}
+
+.app-header-tel {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: white;
+    margin-right: 46px;
+}
+
+.app-hamburger__icon {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+
+    span {
+        display: block;
+        width: 20px;
+        position: relative;
+        border-top: 1px solid;
+        z-index: 1;
+        transform-origin: 4px 0;
+
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        opacity 0.55s ease;
+
+        ~ span {
+            margin-top: 5px;
+        }
+
+    }
+
+    .app-hamburger-btn.active & span {
+        opacity: 1;
+        transform: rotate(-45deg) translate(4px, 0);
+        background: #232323;
+
+        &:nth-last-child(3) {
+            transform: rotate(45deg) translate(2px, -5px);
+        }
+
+        &:nth-last-child(2) {
+            opacity: 0;
+            transform: rotate(0deg) scale(0.2, 0.2);
+        }
+    }
+
+    span:first-child {
+        transform-origin: 0 0;
+    }
+
+    span:nth-last-child(2) {
+        transform-origin: 0 100%;
+    }
+}

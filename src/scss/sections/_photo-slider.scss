@@ -1,0 +1,12 @@
+.app-photo-slider {
+    background-color: var(--bg-dark);
+    margin-bottom: 10px;
+
+    swiper-slide {
+        width: auto;
+
+        img {
+            display: block;
+        }
+    }
+}
