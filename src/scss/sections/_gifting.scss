@@ -1,7 +1,7 @@
-
-
-
 .app-gifting {
+    --slider-btn-size: 56px;
+    --slider-tools-indent: 150px;
+
     padding-top: 60px;
     padding-bottom: 94px;
     background-color: white;
@@ -14,8 +14,8 @@
 
     .app-content {
         text-align: center;
-        padding-left: 150px;
-        padding-right: 150px;
+        padding-left: var(--slider-tools-indent);
+        padding-right: var(--slider-tools-indent);
         position: relative;
         margin-left: auto;
         margin-right: auto;
@@ -23,15 +23,18 @@
 
         #gifting-swiper-right,
         #gifting-swiper-left {
+            --btn-indent: 0;
+            --btn-size: var(--slider-btn-size);
+
             position: absolute;
             bottom: 33%
         }
 
         #gifting-swiper-left {
-            left: 36px
+            left: calc(var(--slider-tools-indent)/2 - var(--slider-btn-size)/2)
         }
         #gifting-swiper-right {
-            right: 36px
+            right: calc(var(--slider-tools-indent)/2 - var(--slider-btn-size)/2)
         }
     }
 
@@ -66,6 +69,24 @@
         }
     }
 
+    @include mq-max(lg) {
+        --slider-tools-indent: 100px;
+    }
+    @include mq-max(md) {
+        --slider-tools-indent: 0px;
+
+        padding-top: 40px;
+        padding-bottom: 44px;
+
+        swiper-slide {
+            width: 50vw;
+        }
+
+        #gifting-swiper-right,
+        #gifting-swiper-left {
+            display: none;
+        }
+    }
 }
 
 .app-gifting-card {

@@ -37,6 +37,7 @@
     min-width: var(--btn-size);
     min-height: var(--btn-size);
     padding: 0 var(--btn-indent);
+    white-space: nowrap;
 
 
     @media (hover: hover) {

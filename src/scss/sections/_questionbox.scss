@@ -1,10 +1,10 @@
-.app-questionbox {
+.app-question-desktop {
     margin-bottom: 110px;
-    background-color: #FF6D00;
+    background-color: var(--cl-yellow);
     background-image: url('/bg-3.jpg') ;
     background-repeat: no-repeat;
     background-position: 0 center;
-    background-size: contain;
+    background-size: cover;
     color: white;
 
     .app-content {
@@ -19,6 +19,57 @@
         svg {
             margin-right: 26px;
         }
+    }
+}
+
+.app-question-mobile {
+    position: relative;
+    background-color: var(--cl-yellow);
+    margin-bottom: 10px;
+    color: white;
+
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -20px;
+        height: 20px;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.25);
+        pointer-events: none;
+    }
+
+    .app-content {
+        max-width: 480px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 68px;
+        padding-bottom: 68px;
+    }
+
+    h2 {
+        font-size: 24px;
+        line-height: 1.2;
+        letter-spacing: 0.3px;
+    }
+    p {
+        padding: 26px 0 30px;
+        border: solid;
+        border-width: 1px 0;
+        margin: 38px 0 66px;
+        font-family: "Rokkitt", sans-serif;
+        font-weight: 300;
+        font-size: 22px;
+        letter-spacing: 1.2px;
+        line-height: 1.3;
+    }
+
+    .app-btn {
+        --btn-background: #f14a00;
+        --btn-color: white;
+        border: 1px solid #fef4f3;
+        letter-spacing: 2.5px;
     }
 }
 

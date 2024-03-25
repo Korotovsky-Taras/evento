@@ -9,4 +9,12 @@
             display: block;
         }
     }
+
+    @include mq-max(md) {
+        swiper-slide {
+            img {
+                height: 90px;
+            }
+        }
+    }
 }

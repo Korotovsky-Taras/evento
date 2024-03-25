@@ -1,6 +1,7 @@
 
 .app-brand-slider {
-    padding: 80px 0;
+    --brand-slider-ident: 80px;
+    padding: var(--brand-slider-ident) 0;
 
     swiper-slide {
         width: auto;
@@ -16,6 +17,21 @@
             right: 100%;
             margin-right: 30px;
             background-color: var(--cl-section-border);
+        }
+    }
+
+    @include mq-max(lg) {
+        --brand-slider-ident: 40px;
+
+    }
+
+    @include mq-max(md) {
+        padding: 0;
+
+        swiper-slide {
+             img {
+                 height: 108px;
+             }
         }
     }
 }

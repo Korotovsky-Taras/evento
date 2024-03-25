@@ -1,5 +1,7 @@
 
 :root {
+    --b-gap: 54px;
+
     --bg-dark: #000;
     --bg-secondary: #313131;
 
@@ -10,16 +12,36 @@
     --header-index: 10;
     --header-height: 95px;
 
-    --container-indent: 56px;
+    --container-indent: #{withRatio(var(--b-gap))};
 
-    --h1-fs: 44px;
-    --h2-fs: 38px;
-    --h3-fs: 28px;
+    --h1-fs: #{withRatio(44px)};
+    --h2-fs: #{withRatio(38px)};
+    --h3-fs: #{withRatio(28px)};
 
     --h-index: 100;
+    --fs-ratio: 1;
+
+
+    @include mq-max(xl) {
+        --fs-ratio: 0.93;
+    }
+
+    @include mq-max(lg) {
+        --fs-ratio: 0.90;
+    }
+
+    @include mq-max(md) {
+        --fs-ratio: 0.80;
+        --container-indent: 28px;
+        --header-height: 78px;
+
+        --h1-fs: 28px;
+        --h2-fs: 20px;
+        --h3-fs: 20px;
+    }
 
     @include mq-max(sm) {
-        --header-height: 50px;
+
     }
 }
 
@@ -31,6 +53,14 @@ h1,h2,h3 {
     span {
         font-weight: 300;
     }
+}
+
+p {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
 }
 
 h2 {
@@ -99,13 +129,13 @@ html.ovhidden body {
 
 
 .app-desktop-visible {
-    @include mq-max(sm) {
+    @include mq-max(md) {
         display: none!important;
     }
 }
 
 .app-mobile-visible {
-    @include mq-min(sm) {
+    @include mq-min(md) {
         display: none!important;
     }
 }
