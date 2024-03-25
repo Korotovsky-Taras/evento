@@ -79,7 +79,7 @@
         padding-bottom: 44px;
 
         swiper-slide {
-            width: 50vw;
+            width: 60vw;
         }
 
         h3 {
@@ -89,6 +89,11 @@
         #gifting-swiper-right,
         #gifting-swiper-left {
             display: none;
+        }
+    }
+    @include mq-max(sm) {
+        swiper-slide {
+            width: 70vw;
         }
     }
 }
