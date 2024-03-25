@@ -6,13 +6,11 @@ import handlebars from 'vite-plugin-handlebars';
 
 const isProd = process.env.NODE_ENV === "production" || null;
 
-const buildFolder = "__build__";
-const assetsFolder = "___assets__";
+const buildFolder = "build";
 const isLegacy = false; // set True if you want to support older browsers or < ES2015
 
-console.log(handlebars)
-
 export default {
+    base: './',
     root: "./src",
     build: {
         rollupOptions: {
@@ -20,16 +18,9 @@ export default {
             output: {
                 entryFileNames: `${buildFolder}/js/[name].js`,
                 chunkFileNames: `${buildFolder}/chunks/[name].js`,
-                assetFileNames: (e) => {
-                    if (/\.css$/.test(e.name))
-                        return `${buildFolder}/css/[name].[hash].css`;
-
-                    return `${buildFolder}/images/[name].[hash].[ext]`;
-                },
             },
         },
         outDir: "../dist",
-        assetsDir: assetsFolder,
         emptyOutDir: true,
         clear: true,
     },
