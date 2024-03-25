@@ -14,7 +14,7 @@
 
         <title>Main page</title>
       <script type="module" crossorigin src="./build/js/index.js"></script>
-      <link rel="stylesheet" href="./assets/index-07b9152b.css">
+      <link rel="stylesheet" href="./assets/index-f04be001.css">
     </head>
 <body>
     <div class="app-wrapper">
@@ -68,18 +68,43 @@
                         <a href="#" class="app-btn app-header-btn"><span>free consultation</span></a>
                     </div>
                 </div>
+                <div class="app-header__wrapper app-mobile-visible">
+                    <div class="app-header__left">
+                        <a class="app-header__logo" href="/">
+                            <svg width="220" height="50">
+                                <use xlink:href="./app-sprite.svg#logo"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="app-header__right">
+                        <button class="app-btn app-hamburger-btn">
+                            <div class="app-hamburger__icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
             </div>
         </header>        <main>
                 <section class="app-solutions">
                     <div class="app-content">
                         <div class="app-content__inner">
-                            <h2>
-                                <div><span>Global Evento <span class="cl-yellow">:</span> the indastry-leading</span></div>
-                                <div>Luxury Corporate Gifting <span>Agency.</span></div>
-                            </h2>
-                            <hr>
-                            <p>We build corporate gifting solutions to energize your customers, clients, employer, sales teams and channel partners. We specialize in products that are impactful and as unique as your recipients.</p>
-                            <a href="#" class="app-btn app-section-btn"><span>our solutions</span></a>
+                            <div class="app-solutions__tc">
+                                <h2>
+                                    <div><span>Global Evento <span class="cl-yellow">:</span> <nobr>the indastry-leading</nobr></span></div>
+                                    <div>Luxury Corporate Gifting <span>Agency.</span></div>
+                                </h2>
+                            </div>
+                            <div class="app-solutions__cc">
+                                <hr class="app-desktop-visible">
+                                <img class="app-mobile-visible" src="./solutions.webp" />
+                            </div>
+                            <div class="app-solutions__bc">
+                                <p>We build corporate gifting solutions to energize your customers, clients, employer, sales teams and channel partners. We specialize in products that are impactful and as unique as your recipients.</p>
+                                <a href="#" class="app-btn app-section-btn"><span>our solutions</span></a>
+                            </div>
                         </div>
                     </div>
                 </section>    <section class="app-brand-slider">
@@ -207,11 +232,12 @@
                                     centeredSlides: true,
                                     centeredSlidesBounds: true,
                                     spaceBetween: 28,
+                                    slidesPerView: 'auto',
                                     breakpoints: {
                                         640: {
-                                            slidesPerView: 1,
+                                            slidesPerView: 'auto',
                                         },
-                                        1200: {
+                                        1024: {
                                             slidesPerView: 3,
                                         },
                                         1620: {
@@ -277,13 +303,23 @@
                             </div>
                         </div>
                     </div>
-                </section>    <section class="app-questionbox">
+                </section>    <section class="app-question-desktop app-desktop-visible">
                     <div class="app-container">
                         <div class="app-content">
                             <svg width="80" height="80">
                                 <use xlink:href="./app-sprite.svg#qmess"></use>
                             </svg>
                             <span>Have questions? Speak to a Gifting Strategist - <a href="tel:+38888033117" class="app-questionbox-tel"><span>888</span><span>-</span><span>308</span><span>-</span><span>3117</span></a></span>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="app-question-mobile app-mobile-visible">
+                    <div class="app-container">
+                        <div class="app-content">
+                            <h2><span>WHAT MAKES US</span> THE LUXURY CORPORATE GIFTING <span>AGENCY?</span></h2>
+                            <p>We are nospilaly proessionals who nave devoted our experience and knowledge to creating the most impactful and memorable gifting experience in the industry.</p>
+                            <a href="#" class="app-btn"><span>DISCOVER OUR STORY</span></a>
                         </div>
                     </div>
                 </section>    <section class="app-photo-slider">
@@ -340,9 +376,13 @@
             </div>
             <div class="app-footer__basement">
                 <div class="app-container">
-                    <div class="app-footer__basement-content">
+                    <div class="app-footer__basement-content app-desktop-visible">
                         <div>© 2024 GLOBAL EVENTO. ALL RIGHTS RESERVED. GLOBAL EVENTO IS AN ESQUINA, LLC COMPANY.</div>
                         <div>PRIVACY POLICY COOKIE POLICY ACCESSIBILITY STATEMENT</div>
+                    </div>
+                    <div class="app-footer__basement-content app-mobile-visible">
+                        <div>© 2024 GLOBAL EVENTO. ALL RIGHTS RESERVED. </div>
+                        <div>PRIVACY POLICY</div>
                     </div>
                 </div>
             </div>
