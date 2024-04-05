@@ -109,7 +109,7 @@
                         </div>
                     </div>
                 </section>    <section class="app-brand-slider">
-                    <swiper-container slides-per-view="auto" space-between="10" loop="true">
+                    <swiper-container id="brands-swiper" init="false">
                         <swiper-slide><a href="#"><img title="title" alt="alt" src="./brands/1.jpg" /></a></swiper-slide>
                         <swiper-slide><a href="#"><img title="title" alt="alt" src="./brands/2.jpg" /></a></swiper-slide>
                         <swiper-slide><a href="#"><img title="title" alt="alt" src="./brands/3.jpg" /></a></swiper-slide>
@@ -123,7 +123,31 @@
                         <swiper-slide><a href="#"><img title="title" alt="alt" src="./brands/5.jpg" /></a></swiper-slide>
                         <swiper-slide><a href="#"><img title="title" alt="alt" src="./brands/6.jpg" /></a></swiper-slide>
                     </swiper-container>
-                </section>    <section class="app-gifting">
+                
+                    <script type="text/javascript">
+                        document.addEventListener("DOMContentLoaded", () => {
+                            const swiper = document.getElementById("brands-swiper");
+                
+                            const params = {
+                                loop: true,
+                                autoplay: {
+                                    delay: 0,
+                                    disableOnInteraction: false
+                                },
+                                speed: 1500,
+                                spaceBetween: 10,
+                                slidesPerView: 'auto',
+                            };
+                
+                            Object.assign(swiper, params);
+                
+                            swiper.initialize();
+                        })
+                    </script>
+                </section>
+                <script>
+                
+                </script>    <section class="app-gifting">
                     <div class="app-content">
                         <h2>Give them something <nobr>to really talk about.</nobr></h2>
                         <h3>
