@@ -131,6 +131,7 @@
                             const params = {
                                 loop: true,
                                 autoplay: {
+                                    enabled: true,
                                     delay: 0,
                                     disableOnInteraction: false,
                                     pauseOnMouseEnter: true
@@ -138,6 +139,14 @@
                                 speed: 3000,
                                 spaceBetween: 10,
                                 slidesPerView: 'auto',
+                
+                                // array with CSS styles
+                                injectStyles: [`
+                                    :host {
+                                        --swiper-wrapper-transition-timing-function: linear;
+                                    }
+                                `,
+                                ],
                             };
                 
                             Object.assign(swiper, params);
