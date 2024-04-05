@@ -149,7 +149,9 @@
                 
                             Object.assign(swiper, params);
                 
-                            swiper.initialize();
+                            setTimeout(() => {
+                                swiper.initialize();
+                            }, 1_000)
                         })
                     </script>
                 </section>
