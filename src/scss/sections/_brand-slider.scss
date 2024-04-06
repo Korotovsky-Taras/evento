@@ -1,6 +1,6 @@
 
 .app-brand-slider {
-    --brand-slider-ident: 80px;
+    --brand-slider-ident: 60px;
     padding: var(--brand-slider-ident) 0;
 
     swiper-slide {
@@ -15,14 +15,24 @@
             top: 50%;
             transform: translateY(-50%);
             right: 100%;
-            margin-right: 30px;
+            margin-right: 5px;
             background-color: var(--cl-section-border);
+        }
+
+        img {
+            height: 260px;
+            pointer-events: none;
         }
     }
 
     @include mq-max(lg) {
         --brand-slider-ident: 40px;
 
+        swiper-slide {
+            img {
+                height: 180px;
+            }
+        }
     }
 
     @include mq-max(md) {

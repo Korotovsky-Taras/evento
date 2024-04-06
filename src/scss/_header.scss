@@ -17,8 +17,29 @@
         .app-header__logo {
             max-width: 100px;
             min-width: 100px;
-            margin-right: 30px;
+            margin-right: 20px;
         }
+
+
+        .app-header__nav {
+            padding-left: 10px;
+            margin-left: 10px;
+        }
+
+        .app-header-btn {
+            margin-left: 20px;
+        }
+    }
+
+    @include mq((points: (max-width: 1200px))){
+        .app-header__wrapper.app-desktop-visible {
+            .app-header-tel {
+                display: none;
+            }
+        }
+    }
+
+    @include mq((points: (max-width: 1100px))){
         .app-header__nav {
             padding-left: 0;
             margin-left: 0;
@@ -29,19 +50,20 @@
                 display: none;
             }
         }
-
-        .app-header-tel {
-            display: none;
-        }
-        .app-header-btn {
-            margin-left: 20px;
-        }
     }
 
     @include mq-max(md) {
         .app-header__logo {
-            max-width: 170px;
-            min-width: 170px;
+            max-width: 160px;
+            min-width: 160px;
+        }
+    }
+
+    @include mq-max(sm) {
+        .app-header__wrapper.app-mobile-visible {
+            .app-header-tel, .app-header-btn {
+                display: none;
+            }
         }
     }
 }
@@ -58,27 +80,27 @@
     --hn-sh-cl: #fff;
 
     color: #fff;
-    margin-left: withRatio(26px);
-    padding-left: withRatio(26px);
+    margin-left: withRatio(19px);
+    padding-left: withRatio(20px);
     box-shadow: -1px 0 0 var(--hn-sh-cl);
-    padding-top: withRatio(18px);
-    padding-bottom: withRatio(18px);
+    padding-top: withRatio(12px);
+    padding-bottom: withRatio(12px);
 
     b {
-        font-size: withRatio(16px);
+        font-size: withRatio(13px);
         text-transform: uppercase;
-        margin-right: withRatio(18px);
+        margin-right: withRatio(16px);
         margin-left: withRatio(18px);
-        letter-spacing: 1.5px;
+        letter-spacing: 1.7px;
     }
 
     [href] {
         white-space: nowrap;
-        padding: 6px withRatio(12px);
+        padding: 6px withRatio(8px);
         text-transform: uppercase;
-        font-size: withRatio(12px);
+        font-size: withRatio(10px);
         font-weight: 600;
-        letter-spacing: 1.5px;
+        letter-spacing: 1.3px;
 
         svg {
             margin-left: 4px;
@@ -121,18 +143,19 @@
 }
 
 .app-header-tel {
-    font-size: withRatio(16px);
+    font-size: withRatio(10px);
     font-weight: 600;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.7px;
     color: white;
-    margin-right: withRatio(46px);
+    margin-right: withRatio(26px);
     white-space: nowrap;
 }
 
 .app-hamburger-btn {
     --btn-size: 40px;
     --btn-indent: 10px;
-    color: #b0b0b0;
+    --btn-color: #b0b0b0;
+    margin-left: 36px;
 }
 
 .app-hamburger__icon {

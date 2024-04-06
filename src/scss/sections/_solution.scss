@@ -1,6 +1,6 @@
 .app-solutions {
-    --sol-content-ti: 120px;
-    --sol-content-bi: 140px;
+    --sol-content-ti: 160px;
+    --sol-content-bi: 154px;
 
     background-color: white;
     background-image: url('/bg-1.jpg') ;
@@ -9,24 +9,27 @@
     background-size: cover;
     border-top: 1px solid var(--cl-section-border);
     border-bottom: 1px solid var(--cl-section-border);
-    margin-top: 36px;
+    margin-top: 18px;
     display: flex;
 
     &:before {
         content: "";
         flex: 1;
         min-width: 0;
-        background-image: url(/solutions.webp);
+        background-image: url(/solutions.png);
         background-repeat: no-repeat;
         background-position: right center;
-        background-size: auto 84%;
-        margin-right: 70px;
+        background-size: 970px auto;
+        margin-right: 30px;
 
         @include mq-max(lg) {
             background-size: auto 25vw;
-            background-position: right 17%;
             margin-right: 40px;
         };
+    }
+
+    .app-solutions__bc {
+        font-family: 'Rokkitt', sans-serif;
     }
 
     .app-content__inner {
@@ -40,28 +43,43 @@
         padding-top: withRatio(var(--sol-content-ti));
         padding-bottom: withRatio(var(--sol-content-bi));
 
+        .content-t {
+            margin-bottom: 8px;
+            font-size: 24px;
+            letter-spacing: 0;
+            font-weight: 600;
+        }
         hr {
             max-width: 33px;
             height: 4px;
-            margin: 48px 0;
+            margin: 42px 0 32px;
             border: none;
             background: var(--cl-yellow);
         }
         p {
-            font-size: withRatio(20px);
-            letter-spacing: 1.2px;
-            line-height: 1.6;
+            font-size: withRatio(19px);
+            letter-spacing: 1.3px;
+            line-height: 1.4;
         }
         .app-btn {
-            margin-top: 30px;
+            margin-top: 46px;
         }
     }
 
     @include mq-max(lg) {
+        --sol-content-ti: 120px;
+        --sol-content-bi: 114px;
+
         &:before {
-            background-size: auto 25vw;
-            background-position: right 17%;
-            margin-right: 40px;
+            background-size: auto 30vw;
+            background-position: right 50%;
+            max-width: 40%;
+        }
+    }
+
+    @include mq((points: (max-width: 1200px))){
+        &:before {
+            background-size: auto 36vw;
         }
     }
 

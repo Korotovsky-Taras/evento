@@ -1,5 +1,5 @@
 <section class="app-brand-slider">
-    <swiper-container slides-per-view="auto" space-between="60" loop="true">
+    <swiper-container id="brands-swiper" init="false">
         <swiper-slide><a href="#"><img title="title" alt="alt" src="./brands/1.jpg" /></a></swiper-slide>
         <swiper-slide><a href="#"><img title="title" alt="alt" src="./brands/2.jpg" /></a></swiper-slide>
         <swiper-slide><a href="#"><img title="title" alt="alt" src="./brands/3.jpg" /></a></swiper-slide>
@@ -13,4 +13,39 @@
         <swiper-slide><a href="#"><img title="title" alt="alt" src="./brands/5.jpg" /></a></swiper-slide>
         <swiper-slide><a href="#"><img title="title" alt="alt" src="./brands/6.jpg" /></a></swiper-slide>
     </swiper-container>
+
+    <script type="text/javascript" defer>
+        document.addEventListener("DOMContentLoaded", () => {
+            const swiper = document.getElementById("brands-swiper");
+
+            const params = {
+                loop: true,
+                autoplay: {
+                    enabled: true,
+                    delay: 0,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true
+                },
+                speed: 12000,
+                spaceBetween: 10,
+                slidesPerView: 'auto',
+                allowTouchMove: false,
+                injectStyles: [`
+                    :host {
+                        --swiper-wrapper-transition-timing-function: linear;
+                    }
+                `,
+                ],
+            };
+
+            Object.assign(swiper, params);
+
+            setTimeout(() => {
+                swiper.initialize();
+            }, 500)
+        })
+    </script>
 </section>
+<script>
+
+</script>

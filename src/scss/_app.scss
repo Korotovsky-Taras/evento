@@ -10,13 +10,13 @@
     --cl-section-border: #dcdcdc;
 
     --header-index: 10;
-    --header-height: 95px;
+    --header-height: 70px;
 
     --container-indent: #{withRatio(var(--b-gap))};
 
-    --h1-fs: #{withRatio(44px)};
-    --h2-fs: #{withRatio(38px)};
-    --h3-fs: #{withRatio(28px)};
+    --h1-fs: #{withRatio(34px)};
+    --h2-fs: #{withRatio(28px)};
+    --h3-fs: #{withRatio(18px)};
 
     --h-index: 100;
     --fs-ratio: 1;
@@ -33,7 +33,6 @@
     @include mq-max(md) {
         --fs-ratio: 0.80;
         --container-indent: 28px;
-        --header-height: 78px;
 
         --h1-fs: 28px;
         --h2-fs: 20px;
@@ -55,6 +54,22 @@ h1,h2,h3 {
     }
 }
 
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+    margin: 0;
+}
+
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
 p {
     margin: 0;
 }
@@ -63,20 +78,25 @@ img {
     max-width: 100%;
 }
 
-h2 {
+h1 {
     font-size: var(--h1-fs);
 }
 
 h2 {
     font-size: var(--h2-fs);
+    line-height: 1.3;
+
+    + h3 {
+        margin-top: 8px;
+    }
 }
 
 h3 {
     font-family: 'Rokkitt', sans-serif;
     font-weight: 300;
     text-transform: none;
-    line-height: 1;
-    letter-spacing: 1.4px;
+    line-height: 1.2;
+    letter-spacing: 1.9px;
     font-size: var(--h3-fs);
 }
 
