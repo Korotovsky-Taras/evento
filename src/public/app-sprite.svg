@@ -34,7 +34,7 @@
     </symbol>
 
     <symbol viewBox="0 0 10.063 8.813" fill="none" xmlns="http://www.w3.org/2000/svg" id="submenu">
-        <path fill="#FF6C00" fill-rule="evenodd" d="M2.874 0L5.031 3.779 7.189 0 10.063 0 5.031 8.813 0 0z"/>
+        <path fill="currentColor" fill-rule="evenodd" d="M2.874 0L5.031 3.779 7.189 0 10.063 0 5.031 8.813 0 0z"/>
     </symbol>
 
     <symbol viewBox="0 0 141.64 141.64" fill="none" xmlns="http://www.w3.org/2000/svg" id="s-fb">

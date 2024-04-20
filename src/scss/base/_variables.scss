@@ -1,3 +1,4 @@
+$media-point-xs: 544px;
 $media-point-sm: 768px;
 $media-point-md: 1024px;
 $media-point-lg: 1600px;
@@ -13,6 +14,9 @@ $media-points: ($media-point-sm, $media-point-md, $media-point-lg, $media-point-
             @return nth($media-points, $n);
         }
     } @else if type_of($n) == string {
+        @if $n == xs {
+            @return $media-point-xs;
+        }
         @if $n == sm {
             @return $media-point-sm;
         }

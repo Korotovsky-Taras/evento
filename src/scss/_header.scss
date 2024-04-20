@@ -43,10 +43,13 @@
         .app-header__nav {
             padding-left: 0;
             margin-left: 0;
-            box-shadow: none;
             display: inline-flex;
 
-            b {
+            &:before {
+                display: none;
+            }
+
+            .app-header__nav-title {
                 display: none;
             }
         }
@@ -76,44 +79,154 @@
     }
 }
 
+.app-header__nav-title {
+    font-size: withRatio(13px);
+    text-transform: uppercase;
+    margin-right: withRatio(16px);
+    margin-left: withRatio(18px);
+    letter-spacing: 1.7px;
+}
+
+.app-header__nav-btn-wrap {
+    position: relative;
+
+    &:hover {
+        .app-header__nav-btn {
+            background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.3), transparent);
+        }
+        .app-header__sub-nav {
+            display: grid;
+            transform: translateY(0px);
+            opacity: 1;
+
+            @starting-style {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+        }
+    }
+}
+
+.app-header__nav-btn {
+    white-space: nowrap;
+    padding: 6px withRatio(8px) 6px withRatio(12px);
+    text-transform: uppercase;
+    font-size: withRatio(10px);
+    font-weight: 600;
+    letter-spacing: 1.3px;
+    height: var(--header-height);
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+
+    svg {
+        margin-left: 4px;
+        color: var(--cl-yellow)
+    }
+}
+
 .app-header__nav {
     --hn-sh-cl: #fff;
+    position: relative;
+    display: flex;
+    align-items: center;
 
     color: #fff;
     margin-left: withRatio(19px);
     padding-left: withRatio(20px);
-    box-shadow: -1px 0 0 var(--hn-sh-cl);
-    padding-top: withRatio(12px);
-    padding-bottom: withRatio(12px);
 
-    b {
-        font-size: withRatio(13px);
-        text-transform: uppercase;
-        margin-right: withRatio(16px);
-        margin-left: withRatio(18px);
-        letter-spacing: 1.7px;
-    }
-
-    [href] {
-        white-space: nowrap;
-        padding: 6px withRatio(8px);
-        text-transform: uppercase;
-        font-size: withRatio(10px);
-        font-weight: 600;
-        letter-spacing: 1.3px;
-
-        svg {
-            margin-left: 4px;
-        }
-
-        &:hover {
-            transition: opacity 0.15s ease-out;
-            opacity: 0.8;
-        }
+    &:before {
+        content: "";
+        width: 1px;
+        height: calc(var(--header-height) - 30px);
+        background-color: var(--hn-sh-cl);
+        position: absolute;
+        right: 100%;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     ~ .app-header__nav {
         --hn-sh-cl: #666
+    }
+}
+
+.header__sub-nav-btn {
+    position: relative;
+    color: black;
+
+    &:before {
+        content: "";
+        position: absolute;
+        right: 100%;
+        top: 10px;
+        margin-right: 8px;
+        width: 2px;
+        height: 2px;
+        border-radius: 2px;
+        box-shadow: inset 0 0 0 3px;
+    }
+
+    > span {
+        color: white;
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 4px;
+        padding-top: 4px;
+        line-height: 1;
+        vertical-align: middle;
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 1px;
+            box-shadow: inset 0 1px 0;
+            transform: translateX(100%);
+            transition: transform 0.15s ease-out;
+        }
+    }
+
+    &:hover {
+        > span {
+            &:after {
+                transform: translateX(0);
+            }
+        }
+    }
+}
+
+.app-header__sub-nav {
+    --nav-sh-width: 2px;
+    --cols: 2;
+
+    display: none;
+    position: absolute;
+    background-color: var(--cl-yellow);
+    left: calc(-1 * var(--nav-sh-width));
+    top: calc(100% - var(--nav-sh-width));
+    padding: 24px 42px 34px;
+    box-shadow: inset 0 0 0 var(--nav-sh-width) black;
+    grid-template-columns: repeat(var(--cols), minmax(max-content, 1fr));
+    transition-delay: 0.1s;
+    transition-timing-function: ease-out;
+    transition-duration: 0.15s;
+    transition-behavior: allow-discrete;
+    transform: translateY(30px);
+    opacity: 0;
+    font-size: 12px;
+    gap: 8px 42px;
+
+    &.-v3 {
+       --cols: 3;
+    }
+
+    &.-right {
+        left: unset;
+        right: calc(-1 * var(--nav-sh-width));
     }
 }
 

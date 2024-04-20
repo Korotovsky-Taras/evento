@@ -1,1 +1,1 @@
-import "./cookies"
+import "./navigation.js"
