@@ -1,0 +1,90 @@
+.app-about-post {
+    padding-top: withRatio(48px);
+    padding-bottom: withRatio(48px);
+}
+
+.app-about-post__grid {
+    display: grid;
+    grid-gap: 34px;
+}
+
+.app-about-post__photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 8px;
+}
+
+@include mq-min(sm) {
+    .app-about-post__grid {
+        grid-template-columns: minmax(auto, 33%) 1fr;
+    }
+    .app-about-post__photos {
+        grid-template-columns: 1fr;
+    }
+}
+
+@include mq-min(md) {
+    .app-about-post__grid {
+        grid-template-columns: minmax(auto, 44%) 1fr;
+    }
+    .app-about-post__photos {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.app-about-post__photo-item {
+    max-height: 160px;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &:first-child {
+        grid-column: 1 / -1;
+        max-height: 100%;
+    }
+}
+
+.app-about-post__container {
+
+}
+
+.app-about-post__block {
+    --bl-hor-indent: #{withRatio(18px)}
+
+}
+
+.app-about-post__block-title {
+    background-color: var(--cl-yellow);
+    padding-left: var(--bl-hor-indent);
+    padding-right: var(--bl-hor-indent);
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-size: withRatio(20px);
+    margin-bottom: withRatio(22px);
+    color: white;
+}
+
+.app-about-post__block-content {
+    padding-left: var(--bl-hor-indent);
+    padding-right: var(--bl-hor-indent);
+    padding-bottom: withRatio(28px);
+    font-size: 16px;
+    line-height: 1.6;
+
+    p ~ p {
+        margin-top: withRatio(28px);
+    }
+
+    ul {
+        margin: 0;
+        padding-left: 16px;
+
+        li::marker {
+            color: var(--cl-yellow);
+        }
+    }
+}

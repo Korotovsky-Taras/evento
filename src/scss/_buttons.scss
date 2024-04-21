@@ -69,6 +69,20 @@
     --btn-size: 42px;
 }
 
+
+.app-files-btn {
+    --btn-color: white;
+    --btn-background: #ababab;
+    --btn-hover-background: #ababab;
+    --btn-text-spacing: 3px;
+    --btn-indent: 26px;
+    --btn-size: 42px;
+
+    input {
+        display: none;
+    }
+}
+
 .app-header-btn {
     --btn-color: var(--cl-yellow);
     --btn-background: white;

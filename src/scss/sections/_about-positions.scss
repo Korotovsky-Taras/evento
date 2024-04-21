@@ -1,0 +1,54 @@
+.app-about-positions {
+    background-color: var(--cl-section-yellow);
+    border-color: var(--cl-section-yellow-bc);
+    border-width: 3px 0;
+    border-style: solid;
+    padding-top: withRatio(50px);
+    padding-bottom: withRatio(80px);
+    margin-bottom: withRatio(64px);
+}
+
+.app-about-positions__title {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1.3px;
+    margin-bottom: withRatio(16px);
+}
+
+.app-about-positions__offer-title {
+    color: var(--cl-yellow);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.app-about-positions__offer {
+    background-color: white;
+    font-size: 16px;
+    font-family: 'Rokkitt', sans-serif;
+    padding: withRatio(26px) withRatio(36px);
+    border: 1px solid var(--cl-yellow)
+}
+
+.app-about-positions__offer-content {
+    line-height: 1.5;
+}
+
+.app-about-positions__offer-block {
+    ~ .app-about-positions__offer-block {
+        margin-top: 20px;
+    }
+}
+
+.app-about-positions__footer {
+    margin-top: 20px;
+    font-family: 'Rokkitt', sans-serif;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    a[href] {
+        color: var(--cl-yellow);
+    }
+}

@@ -1,0 +1,84 @@
+.app-about-team {
+    --person-image-size: 228px;
+    --person-image-sw: 3px;
+    --person-cols: 4;
+
+    @include mq-max(md) {
+        --person-cols: 3;
+    }
+
+    @include mq-max(sm) {
+        --person-cols: 2;
+    }
+
+}
+
+.app-about-team__header {
+    background-color: white;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding: withRatio(36px) 0;
+
+    --person-image-sw: 8px;
+    --person-image-size: 314px;
+
+    .app-about-team__person {
+        grid-column: 1/-1;
+    }
+}
+
+.app-about-team__bottom {
+    background-color: var(--cl-section-yellow);
+    border-color: var(--cl-section-yellow-bc);
+    border-width: 3px 0;
+    border-style: solid;
+    padding-top: withRatio(60px);
+    padding-bottom: withRatio(74px);
+    margin-bottom: withRatio(60px);
+}
+
+.app-about-team__person {
+    display: inline-flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    .app-about-team__person-name {
+        margin-top: withRatio(20px);
+    }
+
+    img {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.app-about-team__person-img {
+    overflow: hidden;
+    height: clamp(calc(0.7 * var(--person-image-size)), 15vw, var(--person-image-size));
+    width: clamp(calc(0.7 * var(--person-image-size)), 15vw, var(--person-image-size));
+    border-radius: 50%;
+    box-shadow: 0 0 0 var(--person-image-sw) var(--cl-yellow);
+}
+
+.app-about-team__person-name {
+    text-transform: uppercase;
+    font-size: withRatio(20px);
+}
+
+.app-about-team__person-position {
+    font-family: 'Rokkitt', sans-serif;
+    line-height: 1.4;
+    font-size: withRatio(15px);
+    color: var(--cl-yellow);
+    font-weight: 300;
+}
+
+.app-about-team__grid {
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: repeat(var(--person-cols), minmax(auto, 1fr));
+}

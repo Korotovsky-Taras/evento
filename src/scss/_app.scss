@@ -9,6 +9,9 @@
     --cl-dark-yellow: #d3520c;
     --cl-section-border: #dcdcdc;
 
+    --cl-section-yellow: #fff8f2;
+    --cl-section-yellow-bc: #ffd3b3;
+
     --header-index: 10;
     --header-height: 70px;
 
@@ -17,6 +20,8 @@
     --h1-fs: #{withRatio(34px)};
     --h2-fs: #{withRatio(28px)};
     --h3-fs: #{withRatio(18px)};
+
+    --brand-slider-ident: 0px;
 
     --h-index: 100;
     --fs-ratio: 1;
@@ -42,6 +47,13 @@
     @include mq-max(sm) {
 
     }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 
 h1,h2,h3 {
@@ -72,6 +84,10 @@ ol[role='list'] {
 
 p {
     margin: 0;
+}
+
+b {
+    font-weight: 600;
 }
 
 img {
@@ -137,6 +153,10 @@ html.ovhidden body {
     display: none!important;
 }
 
+.ff-roc {
+    font-family: 'Rokkitt', sans-serif;
+}
+
 .pixel {
     position: fixed;
     top: 0;
@@ -179,3 +199,15 @@ html.ovhidden body {
 .cl-yellow {
     color: var(--cl-yellow)
 }
+
+
+.app-ct-v1 {
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.app-main-page {
+    --brand-slider-ident: 60px;
+}
+
