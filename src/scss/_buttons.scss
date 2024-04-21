@@ -73,7 +73,8 @@
 .app-files-btn {
     --btn-color: white;
     --btn-background: #ababab;
-    --btn-hover-background: #ababab;
+    --btn-hover-color: white;
+    --btn-hover-background: var(--cl-yellow);
     --btn-text-spacing: 3px;
     --btn-indent: 26px;
     --btn-size: 42px;

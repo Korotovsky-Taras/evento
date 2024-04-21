@@ -139,7 +139,7 @@
 .app-about-contact-form__drop-area {
     margin-top: withRatio(36px);
     background-color: #f3f3f3;
-    padding-bottom: withRatio(30px);
+    padding: 10px 10px 30px;
     border: 1px solid var(--cl-section-border);
     font-size: 18px;
     font-weight: 300;
@@ -149,7 +149,6 @@
     }
 
     .attachment-panel {
-        padding: withRatio(18px);
 
         .attach-item {
             font-size: 13px;
@@ -170,6 +169,11 @@
             align-items: center;
             right: 0;
             top: 0;
+            cursor: pointer;
+
+            &:hover {
+                color: var(--cl-dark-yellow);
+            }
 
             &:before, &:after {
                 content: "";
@@ -188,10 +192,16 @@
         }
     }
 
+    &.dragover {
+        border-color: var(--cl-yellow);
+        box-shadow: inset 0 0 0 1px var(--cl-yellow);
+    }
+
     .content-panel {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding-top: 18px;
     }
 }

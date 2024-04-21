@@ -1,6 +1,7 @@
 export class DropPanel {
     MAX_FILES_LENGTH = 4;
     PANEL_INIT_STYLE = "init";
+    PANEL_DRAGOVER_STYLE = "dragover";
     ATTACH_ITEM_STYLE = "attach-item";
     ATTACH_ITEM_DELETE_ICON_STYLE = "attach-item__delete-icon";
 
@@ -21,7 +22,6 @@ export class DropPanel {
     isReadyToUse() {
         return (this.droppable instanceof HTMLElement && this.attachments instanceof HTMLElement && this.uploader instanceof HTMLInputElement);
     }
-
 
     dropHandler(ev) {
         ev.preventDefault();
@@ -66,7 +66,6 @@ export class DropPanel {
         if (validation.valid) {
             this.files.set(file.name, file)
             this.createAttachment(file);
-            console.log(file.name, file, this.files)
         } else {
             console.error(validation.reason);
         }
@@ -112,8 +111,9 @@ export class DropPanel {
 
 
     init() {
+
         if (!this.isReadyToUse()) {
-            throw new Error("SliderPanel: elements to init not found")
+            throw new Error("DropPanel: init error")
         }
 
         Object.assign(this.droppable, {
@@ -124,10 +124,24 @@ export class DropPanel {
 
         this.droppable.setAttribute("droppable", true);
 
-        this.droppable.addEventListener('dragenter', (e) => { e.stopPropagation(); this.droppable.classList.add('dragover')});
-        this.droppable.addEventListener('dragleave', (e) => { e.stopPropagation(); this.droppable.classList.remove('dragover')});
-        this.droppable.addEventListener('drop', (e) => this.dropHandler(e));
-        this.uploader.addEventListener('change', (e) => this.dropHandler(e));
+        let timeout;
+        this.droppable.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            clearTimeout(timeout);
+
+            if (!this.droppable.classList.contains(this.PANEL_DRAGOVER_STYLE)) {
+                this.droppable.classList.add(this.PANEL_DRAGOVER_STYLE);
+            }
+
+            timeout = setTimeout(() => {
+                this.droppable.classList.remove(this.PANEL_DRAGOVER_STYLE);
+            }, 50);
+        });
+
+        this.droppable.addEventListener('drop', this.dropHandler.bind(this));
+        this.uploader.addEventListener('change', this.dropHandler.bind(this));
+
+        console.log(this.droppable)
 
     }
 }
