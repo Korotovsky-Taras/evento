@@ -27,3 +27,30 @@
         font-weight: 500;
     }
 }
+
+.app-case-study-articles__header {
+    border-top: 1px solid var(--cl-section-border);
+    border-bottom: 1px solid var(--cl-section-border);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    grid-gap: 34px;
+    margin-bottom: clamp(36px, 5vw, 70px);
+    display: grid;
+    text-align: center;
+
+    @include mq-min(sm) {
+        text-align: left;
+        grid-template-columns: 1fr auto;
+    }
+}
+
+.app-case-study-articles__header-title {
+    text-transform: uppercase;
+    font-size: withRatio(30px);
+    font-weight: 300;
+
+    > span {
+        font-weight: 500;
+    }
+
+}

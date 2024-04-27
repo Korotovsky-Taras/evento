@@ -2,6 +2,15 @@
 .app-brand-slider {
     padding: var(--brand-slider-ident) 0;
 
+    .app-page-article + & {
+        position: relative;
+        margin-top: -3px;
+        margin-bottom: -3px;
+        background-color: white;
+        border-top: 1px solid var(--cl-section-border);
+        border-bottom: 1px solid var(--cl-section-border);
+    }
+
     swiper-slide {
         width: auto;
         position: relative;

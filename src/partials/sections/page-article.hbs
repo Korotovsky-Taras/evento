@@ -1,0 +1,23 @@
+<section class="app-page-article">
+    <div class="app-container">
+        {{#if class}}
+            <div class="{{class}}">
+                <div class="app-page-article__title">
+                    {{title}}
+                </div>
+                <div class="app-page-article__content">
+                    {{> @partial-block}}
+                </div>
+            </div>
+        {{ else }}
+            <div class="app-ct-v1">
+                <div class="app-page-article__title">
+                    {{title}}
+                </div>
+                <div class="app-page-article__content">
+                    {{> @partial-block}}
+                </div>
+            </div>
+        {{/if}}
+    </div>
+</section>

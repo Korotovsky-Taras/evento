@@ -1,11 +1,29 @@
+.app-question-box {
+    --indent: 110px;
+
+    + .app-photo-slider {
+        margin-top: var(--indent);
+    }
+
+    .app-page-article + & {
+        position: relative;
+        margin-top: -3px;
+        margin-bottom: -3px;
+    }
+
+    @include mq-max(md) {
+        --indent: 10px;
+    }
+}
+
 .app-question-desktop {
-    margin-bottom: 110px;
     background-color: var(--cl-yellow);
     background-image: url('/bg-3.jpg') ;
     background-repeat: no-repeat;
     background-position: 0 center;
     background-size: cover;
     color: white;
+
 
     .app-content {
         padding-top: 40px;
@@ -24,7 +42,6 @@
 .app-question-mobile {
     position: relative;
     background-color: var(--cl-yellow);
-    margin-bottom: 10px;
     color: white;
 
     &:before {

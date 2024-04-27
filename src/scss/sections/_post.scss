@@ -1,38 +1,38 @@
-.app-about-post {
+.app-post {
     padding-top: withRatio(48px);
     padding-bottom: withRatio(48px);
 }
 
-.app-about-post__grid {
+.app-post__grid {
     display: grid;
     grid-gap: 34px;
 }
 
-.app-about-post__photos {
+.app-post__photos {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 8px;
 }
 
 @include mq-min(sm) {
-    .app-about-post__grid {
+    .app-post__grid {
         grid-template-columns: minmax(auto, 33%) 1fr;
     }
-    .app-about-post__photos {
+    .app-post__photos {
         grid-template-columns: 1fr;
     }
 }
 
 @include mq-min(md) {
-    .app-about-post__grid {
+    .app-post__grid {
         grid-template-columns: minmax(auto, 44%) 1fr;
     }
-    .app-about-post__photos {
+    .app-post__photos {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
-.app-about-post__photo-item {
+.app-post__photo-item {
     max-height: 160px;
 
     img {
@@ -48,16 +48,16 @@
     }
 }
 
-.app-about-post__container {
+.app-post__container {
 
 }
 
-.app-about-post__block {
+.app-post__block {
     --bl-hor-indent: #{withRatio(18px)}
 
 }
 
-.app-about-post__block-title {
+.app-post__block-title {
     background-color: var(--cl-yellow);
     padding-left: var(--bl-hor-indent);
     padding-right: var(--bl-hor-indent);
@@ -68,12 +68,26 @@
     color: white;
 }
 
-.app-about-post__block-content {
+.app-post__block-content {
     padding-left: var(--bl-hor-indent);
     padding-right: var(--bl-hor-indent);
     padding-bottom: withRatio(28px);
+    font-weight: 300;
     font-size: 16px;
     line-height: 1.6;
+
+    a {
+        color: var(--cl-yellow);
+        font-weight: 600;
+    }
+
+    hr {
+        max-width: 33px;
+        height: 4px;
+        margin: 42px 0 32px;
+        border: none;
+        background: var(--cl-yellow);
+    }
 
     p ~ p {
         margin-top: withRatio(28px);
