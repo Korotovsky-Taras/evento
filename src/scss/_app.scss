@@ -12,6 +12,8 @@
     --cl-section-yellow: #fff8f2;
     --cl-section-yellow-bc: #ffd3b3;
 
+    --back-btn-icon-cl: white;
+
     --header-index: 10;
     --header-height: 70px;
 
@@ -136,6 +138,9 @@ html.ovhidden body {
     overflow: hidden!important;
 }
 
+.text-center {
+    text-align: center;
+}
 
 .ovhidden {
     overflow: hidden!important;
@@ -217,3 +222,30 @@ html.ovhidden body {
     --brand-slider-ident: 60px;
 }
 
+
+
+.app-back-btn {
+    display: inline-flex;
+    background-color: var(--cl-yellow);
+    color: white;
+    font-weight: 600;
+    min-width: 220px;
+    text-transform: uppercase;
+    padding-right: 20px;
+    align-items: center;
+    text-align: center;
+
+    .text {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .icon {
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 0 6px var(--back-btn-icon-cl);
+        margin-right: 24px;
+    }
+}

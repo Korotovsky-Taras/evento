@@ -9,6 +9,8 @@
 
     --person-image-size: 316px;
     --person-image-sw: 8px;
+
+    --back-btn-icon-cl: var(--cl-section-yellow);
 }
 
 .app-about-team-detail__grid {
@@ -25,27 +27,6 @@
 @include mq-min(md) {
     .app-about-team-detail__grid {
         grid-template-columns: minmax(auto, 40%) 1fr;
-    }
-}
-
-.app-about-team-detail__back-btn {
-    display: inline-flex;
-    background-color: var(--cl-yellow);
-    color: white;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding-right: 20px;
-    align-items: center;
-
-    .icon {
-        border-radius: 30px;
-        height: 30px;
-        width: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 0 0 8px var(--cl-section-yellow);
-        margin-right: 20px;
     }
 }
 

@@ -1,6 +1,7 @@
 @import "src/scss/base/mixin";
 @import "src/scss/app";
 @import "src/scss/buttons";
+@import "src/scss/form";
 @import "src/scss/header";
 @import "src/scss/sidebar";
 @import "src/scss/footer";
@@ -20,4 +21,9 @@
 @import "src/scss/sections/about-faq";
 @import "src/scss/sections/about-team";
 @import "src/scss/sections/about-team-detail";
+
+@import "src/scss/sections/article-detail";
+
+@import "src/scss/sections/case-study-header";
+@import "src/scss/sections/case-study-articles";
 

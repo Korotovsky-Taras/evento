@@ -5,14 +5,16 @@ export class DropPanel {
     ATTACH_ITEM_STYLE = "attach-item";
     ATTACH_ITEM_DELETE_ICON_STYLE = "attach-item__delete-icon";
 
+
     constructor(config) {
-        if (!config.droppableElementSelector || !config.uploadButtonSelector || !config.attachmentsSelector) {
-            throw new Error("DropPanel: should provide droppableElementSelector, uploadButtonSelector, attachmentsSelector")
+        if (!config.droppableElement) {
+            throw new Error("DropPanel: should provide droppableElement")
         }
 
-        this.droppable = document.querySelector(config.droppableElementSelector);
-        this.attachments = this.droppable.querySelector(config.attachmentsSelector);
-        this.uploader = this.droppable.querySelector(config.uploadButtonSelector);
+        this.droppable = config.droppableElement;
+        this.uploader = config.droppableElement.querySelector("input[type='file']");
+        this.attachments = document.createElement('div');
+        this.attachments.classList.add('attachment-panel');
 
         this.files = new Map();
 
@@ -20,7 +22,7 @@ export class DropPanel {
     }
 
     isReadyToUse() {
-        return (this.droppable instanceof HTMLElement && this.attachments instanceof HTMLElement && this.uploader instanceof HTMLInputElement);
+        return (this.droppable instanceof HTMLElement && this.uploader instanceof HTMLInputElement);
     }
 
     dropHandler(ev) {
@@ -115,6 +117,8 @@ export class DropPanel {
         if (!this.isReadyToUse()) {
             throw new Error("DropPanel: init error")
         }
+
+        this.droppable.prepend(this.attachments);
 
         Object.assign(this.droppable, {
             getFiles: () => {

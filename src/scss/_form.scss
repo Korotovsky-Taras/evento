@@ -1,0 +1,35 @@
+.app-select {
+    --size: 40px;
+    --brc: #a2a2a2;
+
+    position: relative;
+    background: white;
+    display: flex;
+    height: var(--size);
+
+    select {
+        width: 100%;
+        appearance: none;
+        -webkit-appearance: none;
+        outline: none;
+        font-size: 16px;
+        font-family: inherit;
+        letter-spacing: 1px;
+        padding: 0 calc(var(--size) + 8px) 0 18px;
+        border: 1px solid var(--brc);
+    }
+
+    .app-select-icon {
+        pointer-events:  none;
+        position: absolute;
+        width: var(--size);
+        height: var(--size);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        right: 0;
+        top: 0;
+        border-left: 1px solid var(--brc);
+    }
+
+}

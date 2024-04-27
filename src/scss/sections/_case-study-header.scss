@@ -1,0 +1,29 @@
+.app-case-study-header {
+    padding-top: clamp(16px, 5vw, 26px);
+
+    .app-container {
+        border-top: 1px solid var(--cl-section-border);
+        border-bottom: 1px solid var(--cl-section-border);
+        padding-top: clamp(20px, 5vw, 32px);
+        padding-bottom: clamp(20px, 5vw, 32px);
+        background-image: linear-gradient(45deg, white, var(--cl-section-border)) ;
+    }
+}
+
+.app-case-study-header__grid {
+    display: grid;
+    grid-gap: 36px;
+    @include mq-min(md) {
+        grid-template-columns: 1fr 300px;
+    }
+}
+
+.app-case-study-header__title {
+    text-transform: uppercase;
+    font-size: withRatio(30px);
+    font-weight: 300;
+
+    > span {
+        font-weight: 500;
+    }
+}

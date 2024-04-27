@@ -1,10 +1,14 @@
 import {DropPanel} from "./utils/DropPanel.js";
 
 function init() {
+    const droppableElement = document.querySelector(".js-droppable-element");
+
+    if (!droppableElement) {
+        return;
+    }
+
     new DropPanel({
-        droppableElementSelector: ".js-droppable-element",
-        attachmentsSelector: ".js-drop-attachments-element",
-        uploadButtonSelector: ".js-uploader-element",
+        droppableElement
     })
 }
 
