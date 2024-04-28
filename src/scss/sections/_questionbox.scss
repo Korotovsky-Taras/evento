@@ -1,8 +1,7 @@
 .app-question-box {
-    --indent: 110px;
 
     + .app-photo-slider {
-        margin-top: var(--indent);
+        margin-top: clamp(10px, 5vw, 110px);
     }
 
     .app-page-article + & {
@@ -11,9 +10,6 @@
         margin-bottom: -3px;
     }
 
-    @include mq-max(md) {
-        --indent: 10px;
-    }
 }
 
 .app-question-desktop {
