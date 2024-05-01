@@ -58,8 +58,8 @@
 
 .app-about-team__person-img {
     overflow: hidden;
-    height: clamp(calc(0.7 * var(--person-image-size)), 15vw, var(--person-image-size));
-    width: clamp(calc(0.7 * var(--person-image-size)), 15vw, var(--person-image-size));
+    height: clamp(calc(0.5 * var(--person-image-size)), 15vw, var(--person-image-size));
+    width: clamp(calc(0.5 * var(--person-image-size)), 15vw, var(--person-image-size));
     border-radius: 50%;
     box-shadow: 0 0 0 var(--person-image-sw) var(--cl-yellow);
 }
