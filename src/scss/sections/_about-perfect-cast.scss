@@ -1,0 +1,65 @@
+.app-about-perfect-cast  {
+    padding-top: clamp(36px, 15vw, 60px);
+    padding-bottom: clamp(36px, 15vw, 60px);
+}
+
+
+.app-about-perfect-cast__grid {
+    display: grid;
+    grid-gap: 80px;
+    align-items: flex-start;
+}
+
+@include mq-min(sm) {
+    .app-about-perfect-cast__grid {
+        grid-gap: 46px;
+        grid-template-columns: minmax(auto, 33%) 1fr;
+    }
+}
+
+@include mq-min(md) {
+    .app-about-perfect-cast__grid {
+        grid-gap: 80px;
+        grid-template-columns: minmax(auto, 440px) 1fr;
+    }
+}
+
+.app-about-perfect-cast__image {
+    width: 100%;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+
+    &:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        box-shadow: inset 0 0 30px;
+    }
+
+    .ic-lt {
+        position: absolute;
+        width: 80%;
+        left: -36%;
+        top: -12%;
+    }
+
+    .ic-rb {
+        position: absolute;
+        width: 70%;
+        right: -8%;
+        bottom: -20%;
+    }
+
+    img {
+        display: block;
+        border-radius: 50%;
+        width: 100%;
+    }
+}

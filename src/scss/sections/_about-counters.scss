@@ -1,0 +1,37 @@
+.app-about-counters  {
+    padding-top: clamp(36px, 15vw, 60px);
+    padding-bottom: clamp(36px, 15vw, 60px);
+    background-color: var(--cl-section-yellow);
+    border-color: var(--cl-section-yellow-bc);
+    border-width: 1px 0;
+    border-style: solid;
+}
+
+.app-about-counters__grid {
+    display: grid;
+    grid-gap: 34px;
+    align-items: center;
+    justify-content: center;
+}
+
+@include mq-min(sm) {
+    .app-about-counters__grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.app-about-counters__grid-cell {
+    text-align: center;
+}
+
+.app-about-counter__title {
+    font-size: withRatio(40px);
+    font-weight: 600;
+}
+
+.app-about-counter__subtitle {
+    text-transform: uppercase;
+    color: var(--cl-yellow);
+    font-size: withRatio(20px);
+    font-weight: 400;
+}

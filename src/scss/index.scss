@@ -1,4 +1,6 @@
 @import "src/scss/base/mixin";
+@import "src/scss/base/spaces";
+
 @import "src/scss/app";
 @import "src/scss/buttons";
 @import "src/scss/form";
@@ -24,6 +26,9 @@
 @import "src/scss/sections/about-team-detail";
 @import "src/scss/sections/about-story";
 @import "src/scss/sections/about-excel";
+@import "src/scss/sections/about-counters";
+@import "src/scss/sections/about-perfect-cast";
+@import "src/scss/sections/about-about-experts";
 
 @import "src/scss/sections/article-detail";
 

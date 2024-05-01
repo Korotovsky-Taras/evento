@@ -1,6 +1,6 @@
 .app-about-story  {
-    padding-top: withRatio(48px);
-    padding-bottom: withRatio(48px);
+    padding-top: clamp(36px, 15vw, 60px);
+    padding-bottom: clamp(36px, 15vw, 60px);
 }
 
 .app-about-story__grid {
@@ -37,37 +37,31 @@
     .app-about-story__photo-content {
         bottom: -50px;
     }
-}
 
-.app-about-story__photo-content {
-    color: white;
-    background-color: var(--cl-yellow);
-    position: absolute;
-    left: 0;
-    right: 0;
-    padding: 24px 40px;
-    font-family: 'Rokkitt', sans-serif;
-    line-height: 1.5;
-    box-shadow: 0 0 0 8px white;
-    font-style: italic;
-    font-weight: 300;
-
-    > svg {
+    .app-article-sp-content {
         position: absolute;
-        left: 12px;
-        bottom: 100%;
-        width: clamp(80px, 15vw, 120px);
-        height: clamp(40px, 15vw, 80px);
-        margin-bottom: 12px;
-    }
-
-    @include mq-min(md) {
-        left: 10%;
-        right: 10%;
+        left: 0;
+        right: 0;
+        bottom: -50px;
 
         > svg {
-            left: -13%;
-            margin-bottom: 24px;
+            position: absolute;
+            left: 12px;
+            bottom: 100%;
+            width: clamp(80px, 15vw, 120px);
+            height: clamp(40px, 15vw, 80px);
+            margin-bottom: 12px;
+        }
+
+        @include mq-min(md) {
+            left: 10%;
+            right: 10%;
+
+            > svg {
+                left: -13%;
+                margin-bottom: 24px;
+            }
         }
     }
+
 }
