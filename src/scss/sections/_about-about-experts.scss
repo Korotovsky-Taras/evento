@@ -11,9 +11,16 @@
 }
 
 
+@include mq-min(xs) {
+    .app-about-experts__grid {
+        grid-template-columns: 1fr 1fr 1fr ;
+    }
+}
+
+
 @include mq-min(sm) {
     .app-about-experts__grid {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
 
@@ -25,10 +32,21 @@
 
 
 .app-about-experts__grid-cell {
+    position: relative;
+
+    &:before {
+        content: "";
+        display: block;
+        aspect-ratio: 1.4 / 1;
+    }
+
     img {
+        top: 0;
+        left: 0;
+        height: 100%;
+        position: absolute;
         display: block;
         object-fit: cover;
         width: 100%;
-        min-height: 160px;
     }
 }
