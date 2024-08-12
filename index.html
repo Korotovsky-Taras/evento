@@ -13,8 +13,9 @@
         
 
         <title>Main page</title>
-      <script type="module" crossorigin src="./build/chunks/index.js"></script>
-      <link rel="stylesheet" href="./assets/index-b859c68c.css">
+      <script type="module" crossorigin src="./build/js/index.js"></script>
+      <link rel="modulepreload" crossorigin href="./build/chunks/navigation.js">
+      <link rel="stylesheet" href="./assets/navigation-9b2205e6.css">
     </head>
 <body class="app-main-page">
     <div class="app-wrapper">
@@ -149,26 +150,29 @@
                 </div>
             </div>
         </header>        <main>
-                <section class="app-solutions">
-                    <div class="app-content">
-                        <div class="app-content__inner">
-                            <div class="app-solutions__tc">
-                                <h2>
-                                    <div><span>Global Evento <span class="cl-yellow">:</span> <nobr>the industry-leading</nobr></span></div>
-                                    <div>Luxury Corporate Gifting <span>Agency.</span></div>
-                                </h2>
-                            </div>
-                            <div class="app-solutions__cc">
-                                <hr class="app-desktop-visible">
-                                <img class="app-mobile-visible" src="./solutions.webp" />
-                            </div>
-                            <div class="app-solutions__bc">
-                                <p class="content-t">Give them something to talk about</p>
-                                <p>We build corporate gifting solutions to energize your customers, clients, employer, sales teams and channel partners. We specialize in products that are impactful and as unique as your recipients.</p>
-                                <a href="#" class="app-btn app-section-btn"><span>our solutions</span></a>
-                            </div>
-                        </div>
+                <section class="app-banner">
+                    <div class="app-banner-back"></div>
+                    <div class="app-banner__left-img">
+                        <picture>
+                            <source srcset="./banner/hbl.png, ./banner/hbl-x2.png 2x">
+                            <img src="./banner/hbl.png" alt="Home banner">
+                        </picture>
                     </div>
+                    <div class="app-banner__right-img">
+                        <picture>
+                            <source srcset="./banner/hbr.png, ./banner/hbr-x2.png 2x">
+                            <img src="./banner/hbr.png" alt="Home banner">
+                        </picture>
+                    </div>
+                    <div class="app-banner__content">
+                        <div class="app-banner__content-title">Global Evento<br/><b>Luxury Corporate Gifting</b></div>
+                        <div class="app-banner__content-divider"></div>
+                        <div class="app-banner__content-subtitle">We create corporate gifting experiences to energize your customers, clients, employer, sales teams and channel partners.</div>
+                    </div>
+                
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                    
                 </section>    <section class="app-brand-slider">
                     <swiper-container id="brands-swiper" init="false">
                         <swiper-slide><a href="#"><img title="title" alt="alt" src="./brands/1.jpg" /></a></swiper-slide>
@@ -670,7 +674,7 @@
                 </div>
             </nav>
         </div>
-    </aside>    
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+        
+    </aside>    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 </body>
 </html>
